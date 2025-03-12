@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-2xl font-bold text-center mb-6">Hasil Survei Kepuasan Masyarakat (SKM)</h1>
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <p class="text-lg font-bold">Nilai SKM: {{ "%.2f"|format(skm) }}</p>
+  <p class="text-lg font-bold">Mutu Pelayanan: {{ mutu }}</p>
+  <a href="{{ url_for('index') }}" class="mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    Kembali ke Survei
+  </a>
+</div>
+{% endblock %}
