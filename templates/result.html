@@ -2,9 +2,19 @@
 
 {% block content %}
 <h1 class="text-2xl font-bold text-center mb-6">Hasil Survei Kepuasan Masyarakat (SKM)</h1>
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  <p class="text-lg font-bold">Nilai SKM: {{ "%.2f"|format(skm) }}</p>
-  <p class="text-lg font-bold">Mutu Pelayanan: {{ mutu }}</p>
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 space-y-4">
+  <div class="border-b pb-4">
+    <h2 class="text-xl font-semibold mb-3">Profil Responden</h2>
+    <p class="mb-2"><span class="font-bold">Jenis Kelamin:</span> {{ gender|title }}</p>
+    <p class="mb-2"><span class="font-bold">Pendidikan:</span> {{ pendidikan }}</p>
+    <p class="mb-2"><span class="font-bold">Pekerjaan:</span> {{ pekerjaan }}</p>
+  </div>
+  
+  <div class="pt-4">
+    <h2 class="text-xl font-semibold mb-3">Hasil SKM</h2>
+    <p class="text-lg font-bold">Nilai SKM: {{ "%.2f"|format(skm) }}</p>
+    <p class="text-lg font-bold">Mutu Pelayanan: {{ mutu }}</p>
+  </div>
   <a href="{{ url_for('index') }}" class="mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
     Kembali ke Survei
   </a>
